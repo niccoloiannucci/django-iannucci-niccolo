@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import JsonResponse
 
 def view_b(request):
     context={
@@ -15,3 +16,10 @@ def view_c(request):
      }
     return render(request, "view_c.html", context)
 
+def materie(request):
+    context={
+        'materie' : ['matematica','italiano','inglese','storia','geografia']
+    }
+    response=JsonResponse(context)
+    return response
+    
